@@ -4,10 +4,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace automationBootcampCS
 {
     [TestClass]
-    public class UnitTest1
+    public class HelloWorld
     {
         [TestMethod]
-        public void TestMethod1()
+        public void WriteHelloWorld()
         {
             Console.WriteLine("Hello World!");
         }
