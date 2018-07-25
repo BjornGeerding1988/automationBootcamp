@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "automationBootcampCS", "automationBootcampCS\automationBootcampCS.csproj", "{D951A3AD-4305-420C-879B-88CC467FA059}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D951A3AD-4305-420C-879B-88CC467FA059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D951A3AD-4305-420C-879B-88CC467FA059}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D951A3AD-4305-420C-879B-88CC467FA059}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D951A3AD-4305-420C-879B-88CC467FA059}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F4CB679D-F169-434B-B740-6E16C7CA8BE0}
+	EndGlobalSection
+EndGlobal
