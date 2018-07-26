@@ -10,10 +10,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static java.lang.Thread.sleep;
+
 public class EmptyCartTest extends TestShopScenario {
 
     @Test
-    public void EmptyCart() {
+    public void EmptyCart() throws InterruptedException {
         WebElement shoppingCartEmpty = driver.findElement(By.className("ajax_cart_no_product"));
         Assert.assertTrue(shoppingCartEmpty.isDisplayed());
 
@@ -22,7 +24,7 @@ public class EmptyCartTest extends TestShopScenario {
         driver.findElement(By.id("add_to_cart")).click();
 
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("layer_cart"))));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("layer_cart")));
 
         driver.findElement(By.xpath("//span[text() = ' Proceed to checkout']")).click();
 
@@ -31,8 +33,13 @@ public class EmptyCartTest extends TestShopScenario {
 
         driver.findElement(By.className("icon-trash")).click();
 
-        //wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//p[text() = 'Your shopping cart is empty.']"))));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("alert-warning")));
 
-        //Assert.assertEquals(driver.findElement(By.cssSelector(".alert-warning")).getText(), "Your shopping cart is empty.");
+        if (driver.findElement(By.className("ajax_cart_no_product")).getText().equals("(empty)")) {
+            Assert.assertEquals(driver.findElement(By.className("alert-warning")).getText(), "Your shopping cart is empty.");
+        } else {
+            driver.findElement(By.id("contact-link")).click();
+            sleep(2000);
+        }
     }
 }
