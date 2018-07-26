@@ -17,13 +17,12 @@ namespace automationBootcampCS
             driver.Navigate().GoToUrl("https://techblog.polteq.com/testshop/index.php");
             driver.FindElement(By.ClassName("login")).Click();
 
- 
             driver.FindElement(By.Id("email")).SendKeys("blabla@test.com");
             driver.FindElement(By.Id("passwd")).SendKeys("test1234");
             driver.FindElement(By.Id("SubmitLogin")).Click();
 
             String pageHeaderText = driver.FindElement(By.ClassName("page-heading")).Text;
-            Assert.AreEqual("MY ACCOUNT ", pageHeaderText);
+            Assert.AreEqual("MY ACCOUNT", pageHeaderText);
 
             IWebElement accountInfoText = driver.FindElement(By.ClassName("info-account"));
             accountInfoText.Text.Contains("personal information");
