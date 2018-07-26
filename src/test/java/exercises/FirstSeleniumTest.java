@@ -21,7 +21,7 @@ public class FirstSeleniumTest {
         driver.findElement(By.className("login")).click();
 
         driver.findElement(By.id("email")).sendKeys("blabla@test.com");
-        driver.findElement(By.id("passwd")).sendKeys("test12345");
+        driver.findElement(By.id("passwd")).sendKeys("test1234");
         driver.findElement(By.id("SubmitLogin")).click();
 
         WebElement pageHeaderText = driver.findElement(By.className("page-heading"));
