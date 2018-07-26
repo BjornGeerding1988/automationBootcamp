@@ -10,16 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class FillCartTest {
+public class FillCartTest extends TestShopScenario {
 
     @Test
-    public void FillCart() throws InterruptedException {
-        ChromeDriverManager.getInstance().setup();
-        WebDriver driver = new ChromeDriver();
-
-        driver.manage().window().maximize();
-        driver.get("https://techblog.polteq.com/testshop/index.php");
-
+    public void FillCart() {
         WebElement shoppingCartEmpty = driver.findElement(By.className("ajax_cart_no_product"));
         Assert.assertTrue(shoppingCartEmpty.isDisplayed());
 
@@ -34,7 +28,5 @@ public class FillCartTest {
 
         WebElement shoppingCartFilled = driver.findElement(By.className("ajax_cart_quantity"));
         Assert.assertEquals(shoppingCartFilled.getText(), "1");
-
-        driver.quit();
     }
 }

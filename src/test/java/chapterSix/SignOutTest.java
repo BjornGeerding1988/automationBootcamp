@@ -9,15 +9,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SignOutTest {
+public class SignOutTest extends TestShopScenario {
 
     @Test
     public void SignInandSignOut() {
-        ChromeDriverManager.getInstance().setup();
-        WebDriver driver = new ChromeDriver();
-
-        driver.manage().window().maximize();
-        driver.get("https://techblog.polteq.com/testshop/index.php");
         driver.findElement(By.className("login")).click();
 
         driver.findElement(By.id("email")).sendKeys("blabla@test.com");
@@ -40,7 +35,5 @@ public class SignOutTest {
 
         WebElement signInButton = driver.findElement(By.className("login"));
         Assert.assertEquals(signInButton.getText(), "Sign in");
-
-        driver.quit();
     }
 }
