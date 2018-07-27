@@ -6,7 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.Assertion;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static java.lang.Thread.sleep;
@@ -21,18 +23,21 @@ public class ValidateSupplierProductTest extends TestShopScenario {
 
         WebElement productList = driver.findElement((By.id("product_list")));
         List<WebElement> productNames = productList.findElements(By.className("product-name"));
-
-        boolean productFound = false;
+        List<String> productNamesStrings = new ArrayList<String>();
+        //boolean productFound = false;
 
         for (WebElement element : productNames) {
-            System.out.println(element.getText());
+            productNamesStrings.add(element.getText());
+            //System.out.println(element.getText());
             if (element.getText().contains("MacBook Air")) {
-                productFound = true;
+                //productFound = true;
                 break;
             }
         }
 
-        Assertions.assertThat(productFound).as("Product is not found").isTrue();
+        Assertions.assertThat(productNamesStrings).contains("MacBook Air");
+
+        //Assertions.assertThat(productFound).as("Product is not found").isTrue();
 
 //        List<WebElement> productList = driver.findElements(By.id("product_list"));
 //
