@@ -20,14 +20,23 @@ public class AdjustPersonalInfoTest extends TestShopScenario {
         driver.findElement(By.className("icon-user")).click();
 
         WebElement firstName = driver.findElement(By.id("firstname"));
+        WebElement lastName = driver.findElement(By.id("lastname"));
 
-        if (firstName.getAttribute("value").equals("Test")) {
-            firstName.clear();
-            firstName.sendKeys("Bjorn");
+        String newFirstName;
+        String newLastName;
+
+        if (firstName.getAttribute("value").equals("Test") && firstName.getAttribute("value").equals("Tester")) {
+            newFirstName = "Bjorn";
+            newLastName = "Geerding";
         } else {
-            firstName.clear();
-            firstName.sendKeys("Test");
+            newFirstName = "Test";
+            newLastName = "Tester";
         }
+
+        firstName.clear();
+        firstName.sendKeys(newFirstName);
+        lastName.clear();
+        lastName.sendKeys(newLastName);
 
         driver.findElement(By.id("old_passwd")).sendKeys("test1234");
         driver.findElement(By.name("submitIdentity")).click();
