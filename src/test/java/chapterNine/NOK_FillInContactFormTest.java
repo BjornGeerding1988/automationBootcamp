@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import pages.ContactUsPage;
 import pages.Generic;
 
-public class FillInContactFormTest extends TestShopScenario {
+public class NOK_FillInContactFormTest extends TestShopScenario {
 
     @Test
     public void FillInForm() {
@@ -15,9 +15,9 @@ public class FillInContactFormTest extends TestShopScenario {
         ContactUsPage contactUsPage = new ContactUsPage(driver);
 
         generic.clickContactButton();
-        contactUsPage.fillInContactForm("Customer service","blabla@test.com", "4321234", "Ipod defect while lifting, need new one");
+        contactUsPage.fillInContactForm("Customer service","nope", "4321234", "Help!");
 
-        Assert.assertEquals("Your message has been successfully sent to our team.", driver.findElement(By.className("alert-success")).getText());
+        Assert.assertEquals("Invalid email address.", contactUsPage.errorMessage());
 
     }
 }

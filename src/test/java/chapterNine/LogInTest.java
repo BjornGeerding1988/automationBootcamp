@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LogInPOM extends TestShopScenarioBrowserFactory {
+public class LogInTest extends TestShopScenarioBrowserFactory {
 
     @Test
     public void LogInSuccessful() {
