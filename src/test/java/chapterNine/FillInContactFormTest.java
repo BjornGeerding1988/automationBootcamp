@@ -1,9 +1,7 @@
 package chapterNine;
 
 import chapterSix.TestShopScenario;
-import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ContactUsPage;
 

@@ -18,11 +18,6 @@ public class TestShopScenarioBrowserFactory {
         driver.get("https://techblog.polteq.com/testshop/index.php");
     }
 
-    @Test
-    public void test() {
-        System.out.println("Hallo");
-    }
-
     @AfterMethod
     public void tearDown() {
         driver.quit();

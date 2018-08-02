@@ -2,6 +2,7 @@ package homework;
 
 import chapterSix.TestShopScenario;
 import homeworkPages.HomePage;
+import homeworkPages.LogInPage;
 import homeworkPages.MyAccountPage;
 import homeworkPages.WishListPage;
 import org.assertj.core.api.Assertions;
@@ -17,11 +18,13 @@ public class DeleteWishListTest extends TestShopScenario {
     public void deleteWishList() {
 
         HomePage homeworkPage = new HomePage(driver);
+        LogInPage logInPage = new LogInPage(driver);
         MyAccountPage myAccountPage = new MyAccountPage(driver);
         WishListPage wishListPage = new WishListPage(driver);
         String wishListName = "Feel the pain";
 
-        homeworkPage.logInSuccesful("bjorn@geerding.com", "1qazxsw2");
+        homeworkPage.goToLogInPage();
+        logInPage.logInSuccesful("bjorn@geerding.com", "1qazxsw2");
 
         WebElement pageHeaderText = driver.findElement(By.className("page-heading"));
         Assert.assertEquals(pageHeaderText.getText(), "MY ACCOUNT");
