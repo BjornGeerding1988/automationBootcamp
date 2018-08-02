@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 public class LogInPOM extends TestShopScenarioBrowserFactory {
 
     @Test
-    public void LogInSuccesful() {
+    public void LogInSuccessful() {
         HomePage homePage = new HomePage(driver);
         LogInPage logInPage = new LogInPage(driver);
 
