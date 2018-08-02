@@ -39,6 +39,10 @@ public class ContactUsPage {
         //driver.findElement(sendButton).click();
     }
 
+    public void clickSendButton() {
+        driver.findElement(sendButton).click();
+    }
+
     public boolean emailValidationNOK(){
         return driver.findElement(emailElementNOK).isDisplayed();
     }
