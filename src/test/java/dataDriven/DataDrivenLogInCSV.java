@@ -15,27 +15,17 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 
 public class DataDrivenLogInCSV extends TestShopScenario {
 
-    public String[] ReadfromCSV() throws InterruptedException, IOException {
-
-        String[] data= null;
         String csvFile = "C:\\Users\\Bjorn\\Documents\\_Polteq\\Automation_Bootcamp\\testDataCSV\\testDataCSV.csv";
         BufferedReader br = null;
         String line;
         String cvsSplitBy = ",";
-
-            br = new BufferedReader(new FileReader(csvFile));
-            while ((line = br.readLine()) != null) {
-
-                // use comma as separator
-                data= line.split(cvsSplitBy);
-            }
-        System.out.println("Done");
-        return data;
-    }
 
     @Test(dataProvider = "test")
     public void LogInSuccessful(String email, String password) {
@@ -54,14 +44,18 @@ public class DataDrivenLogInCSV extends TestShopScenario {
     }
 
     @DataProvider(name = "test")
-    public Object[][] provider() throws IOException, InterruptedException {
+    public Iterator<Object []> provider( ) throws InterruptedException, IOException {
+        List<Object []> testCases = new ArrayList<>();
+        String[] data;
 
-        Object[][] returnObject ;
+        //this loop is pseudo code
+        br = new BufferedReader(new FileReader(csvFile));
+        while ((line = br.readLine()) != null) {
+            // use comma as separator
+            data = line.split(cvsSplitBy);
+            testCases.add(data);
+        }
 
-        String[] checkpoint = ReadfromCSV();
-
-        returnObject = new Object[][]{checkpoint };
-        return returnObject;
+        return testCases.iterator();
     }
-
 }
