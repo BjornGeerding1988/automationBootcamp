@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="DataDrivenSuite" parallel="none">
+    <test name="dataVar6Test">
+        <parameter name="subject" value="Customer service" />
+        <parameter name="email" value="blabla@test.com" />
+        <parameter name="orderID" value="4321234" />
+        <parameter name="message" value="Waar zijn mijn spullen?" />
+        <classes>
+            <class name="dataDriven.DataDrivenTest" />
+        </classes>
+    </test>
+    <test name="dataVar7Test">
+        <parameter name="subject" value="Customer service" />
+        <parameter name="email" value="bjorn@geerding.com" />
+        <parameter name="orderID" value="12345678" />
+        <parameter name="message" value="Ik ben mijn bestelling kwijt" />
+        <classes>
+            <class name="dataDriven.DataDrivenTest" />
+        </classes>
+    </test>
+    <test name="dataVar8Test">
+        <parameter name="subject" value="Webmaster" />
+        <parameter name="email" value="1234@5678.com" />
+        <parameter name="orderID" value="00000000" />
+        <parameter name="message" value="Er zit een bug in de website!" />
+        <classes>
+            <class name="dataDriven.DataDrivenTest" />
+        </classes>
+    </test>
+    <test name="dataVar9Test">
+        <parameter name="subject" value="Customer service" />
+        <parameter name="email" value="wieben@jijdan.nl" />
+        <parameter name="orderID" value="201808030001" />
+        <parameter name="message" value="I have no idea what i'm doing" />
+        <classes>
+            <class name="dataDriven.DataDrivenTest" />
+        </classes>
+    </test>
+    <test name="dataVar10Test">
+        <parameter name="subject" value="Customer service" />
+        <parameter name="email" value="pietje@puk.com" />
+        <parameter name="orderID" value="91919191" />
+        <parameter name="message" value="Ik wil mijn geld terug" />
+        <classes>
+            <class name="dataDriven.DataDrivenTest" />
+        </classes>
+    </test>
+</suite>
